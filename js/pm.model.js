@@ -117,6 +117,7 @@ ProjectManager.addNewProject = function(newProjectName)
 	}
 	ProjectManager.saveProject();
 	ProjectManager.currentProject = newProjectName;
+	ProjectManager.hasProject = true;
 	ProjectManager.markProjectAsCurrent();
 };
 
