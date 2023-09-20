@@ -1,0 +1,57 @@
+/* 
+ * PolicyMaker 5: 
+ * Copyright (c) 2015 Michael Reich and David Cooper
+ * All rights reserved.
+ */
+
+body
+{
+	font: 62.5% "Trebuchet MS", sans-serif;
+	margin: 0px;
+	/* margin: 20px; */
+}
+
+.mainwin
+{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	background: #dedede;
+}
+
+.maincontent 
+{
+	width: 960px;
+	display: inline-block;
+}
+
+.mainnavheader
+{
+	padding-top:18px;
+	height: 96px; 
+	background-color: #44697e; 
+	color: #ffffff;
+	font-size: 3.3em; 
+}
+
+.mainhelpcontent
+{
+	font-size: 1.4em;
+	background-color: #ffffff;
+	color: #44697e;
+	display: inline-block;
+}
+
+.mainhelptext
+{
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+}
+
+.indentsect
+{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+

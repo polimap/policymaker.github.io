@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="us">
+<head>
+<!--
+ PolicyMaker 5:
+ Copyright (c) 2015 Michael Reich and David Cooper
+ All rights reserved.
+-->
+
+	<meta charset="utf-8">
+	<title>PolicyMaker 5</title>
+
+	<!-- JQuery, JQueryUI, and theme -->
+	<link href="css/theme/jquery-ui-1.10.4.custom.css" rel="stylesheet"/>
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+
+	<!-- SlickGrid required items -->
+	<script src="js/jquery.event.drag-2.2.js"></script>
+	<link rel="stylesheet" href="css/slick.grid.css" type="text/css"/>
+	<script src="js/slick.core.js"></script>
+	<script src="plugins/slick.rowselectionmodel.js"></script>
+	<script src="js/slick.grid.js"></script>
+
+	<!-- Multiselect required items -->
+	<script src="js/jquery.multiselect.js"></script>
+	<link href="css/multiselect.css" rel="stylesheet">
+
+	<!-- PolicyMaker items -->
+	<script src="js/pm.grid.js"></script>
+	<script src="js/pm.model.js"></script>
+	<script src="js/pm.ui.js"></script>
+	<script src="js/pm.vis.js"></script>
+	<script src="js/pm.windowscheme.js"></script>
+	<script src="js/pm.err.js"></script>
+	<link rel="stylesheet" href="css/pm.css" type="text/css"/>
+
+	<!-- PolicyMaker Model with example project loaded -->
+    <script src="js/exampleProject.js"></script>
+    
+    <script src="js/pm.main.js"></script>
+</head>
+<body>
+
+
+<div id="thetoolbar" class="ui-widget-header" style="height: 40px; width:100%; color:ffffff; margin:0px;">
+	<button class="toolbarbuttons" id="toggleMenu" style="margin-left:5px; width: 80px;">Menu</button>
+	<button class="toolbarbuttons" id="upButton" style="margin-left:90px; width: 80px;">Up</button>
+	<button class="toolbarbuttons" id="helpButton" style="margin-left:175px; width: 80px;">Help</button>
+	<h1 style="margin-top:7px; text-align: center; font-weight: normal;">PolicyMaker 5</h1>
+</div>
+
+<div id="welcomefull" style="width: 100%; height: 100%; background-color: #cbcbcb;">
+	<div id="welcomepage">
+		<img src="css/images/capitoltint.png"/>
+		<div id="welcomeheader">Welcome to PolicyMaker</div>
+		<div id="welcomeselheader">Select a Project:</div>
+		<table>
+			<tr><td><button class="fileselbuttons" id="fsCurrent">Current</button></td>
+				<td colspan="3" id="fsCurrentMessage" class="fileseltext"> </td></tr>
+			<tr><td><button class="fileselbuttons" id="fsExample">Example</button></td>
+				<td class="fileseltext">Open the Example Project</td>
+				<td><button class="fileselbuttons" id="fsCreate">Create</button></td>
+				<td class="fileseltext">Create a new project</td></tr>
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr><td colspan="4">&nbsp;</td></tr>
+			<tr><td><button class="fileselbuttons" id="fsUpload">Import</button></td>
+				<td class="fileseltext">Import a file from your computer</td>
+				<td><button class="fileselbuttons" id="fsDownload"></button></td>
+				<td class="fileseltext">Export the current project to your computer</td></tr>
+			<tr><td><button class="fileselbuttons" id="fsProjects">Projects</button></td>
+				<td colspan="3" id="fsProjectsMessage" class="fileseltext">View a list of your local projects and local storage available</td></tr>
+			<tr><td colspan="4">&nbsp;</td></tr>
+			<tr><td colspan="4"><div class="disclaimer"><i>The software and help text are provided as is, without warranty of any kind, express or implied, including, but 
+not limited to warrantees of fitness for a particular purpose and noninfringement.  
+Under no circumstances shall the authors or copyright holders be liable for any claim, 
+damages, or other liability arising from, out of, or in connection with the software or 
+the use or other dealings in the software.</i></div></td></tr>
+		</table>
+	</div>
+	<div id="welcomefooter">&#169; 2021 Michael R. Reich and David M. Cooper.  All rights reserved.&nbsp;(Version 5.0.172)</div>
+</div>
+
+<!-- Items Below Start Hidden -->
+<ul id="contextMenu" style="display:none; position:absolute">
+  <li class="cmhead">Edit Your Data</li>
+  <li data="Edit" class="cmaction">Edit</li>
+  <li data="Delete" class="cmaction" id="ctextDelete">Delete</li>
+  <li data="Add" class="cmaction" id="ctextAdd">Add</li>
+  <li class="cmhead">View Options</li>
+  <li data="UpRowHeight" class="cmaction">Increase Row Height</li>
+  <li data="DownRowHeight" class="cmaction">Decrease Row Height</li>
+</ul>
+
+<div id="main-menu-sidebar" style="width:420px; height:900px;">
+	<!-- Accordion; May or may not be used -->
+	<div id="main-menu-accord" class="sidebarmenu">
+	<div class='rounded-corners sidebarinner'>
+		<div class='sidenavheader'><div class='sidenavheadertext' id='sidenavMM'>Steps
+			 <button id="bCloseMenu" style="float: right; margin-right: 14px;"></button>
+		</div></div>
+		<div class="sidenavgroup">
+			<div class="sidenavitem" id="sidenavWE">Select Project</div>
+			<div class="sidenavitem" id="sidenavDX">Main Menu</div>
+		</div>
+		
+		<div class='sidenavheader'><div class='sidenavheadertext' id="sidenavCT">1. Policy</div></div>
+		
+		<div class='sidenavheader'><div class='sidenavheadertext' id="sidenavDP">2. Players</div></div>
+		<div class="sidenavgroup">
+			<div class="sidenavitem" id="sidenavPL">2A. Player Table</div>
+			<div class="sidenavitem" id="sidenavPC">2B. Current Position Map</div>
+			<div class="sidenavitem" id="sidenavFC">2C. Current Feasibility</div>
+			<div class="sidenavitem" id="sidenavCN">2D. Consequences</div>
+			<div class="sidenavitem" id="sidenavPI">2E. Interests</div>
+			<div class="sidenavitem" id="sidenavCL">2F. Coalition Map</div>
+		</div>
+		
+		<div class='sidenavheader'><div class='sidenavheadertext' id="sidenavDS">3. Strategies</div></div>
+		<div class="sidenavgroup">
+			<div class="sidenavitem" id="sidenavOS">3A. Opportunities &amp; Obstacles</div>
+			<div class="sidenavitem" id="sidenavSH">3B. Suggested Strategies</div>
+			<div class="sidenavitem" id="sidenavST">3C. Strategy Table</div>
+		</div>
+		
+		<div class='sidenavheader'><div class='sidenavheadertext' id="sidenavDM">4. Impacts</div></div>
+		<div class="sidenavgroup">
+			<div class="sidenavitem" id="sidenavSI">4A. Strategy Impacts</div>
+			<div class="sidenavitem" id="sidenavPF">4B. Future Position Map</div>
+			<div class="sidenavitem" id="sidenavFF">4C. Future Feasibility</div>
+			<div class="sidenavitem" id="sidenavSM">4D. Strategy Implementation</div>
+		</div>
+		
+		<div class='sidenavheader'><div class='sidenavheadertext' id="sidenavDR">Summary and Settings</div></div>
+		<div class="sidenavgroup">
+			<div class="sidenavitem" id="sidenavRE">Summary</div>
+			<div class="sidenavitem" id="sidenavPS">Project Settings</div>
+		</div>
+		<div class='sidenavheader'><div class='sidenavheadertext' id="sidenavXX"></div></div>
+	</div>
+	</div>
+</div>
+
+<div id="dialogs"></div>
+
+<!-- dialog: Open from Disk -->
+<div id="openFromDiskDialog" title="Import PolicyMaker Project from Disk">
+	<input type="file" id="openFiles" name="files[]" multiple style="width: 250px; margin-top: 10px; margin-left: 70px; margin-right: 20px; margin-bottom: 20px;"/>
+	<output id="listOfOpenFiles"></output>
+	<div>Click 'Choose Files' and locate your PolicyMaker project on disk - a file with a .json extension.</div>
+</div>
+
+<!-- dialog: Save to Disk -->
+<div id="saveToDiskDialog" title="Export PolicyMaker Project to Disk">
+    <div style="position: absolute; top: 12px; left: 10 px; width: 125px; text-align:right;">Export (Download) as a file:</div>
+    <div id="downloadToDisk" style="position: absolute; top: 10px; left: 145px; width: 450px; text-align:left;" ></div>
+</div>
+
+</body>
+</html>
