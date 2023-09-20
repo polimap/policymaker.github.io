@@ -669,8 +669,11 @@ MenuStatic.getMenuItemsHtml = function(menu)
 
 MenuStatic.getMenuItemIconHtml = function(menuItem)
 {
+	var menuitemcd = menuItem.code;
+	if (menuItem.code == "PL")
+	    menuitemcd = "pl"
 	var tdImg = '<td class="mainnaviconcell"><img src="css/images/' +
-		'step-' + menuItem.code + '.png' +
+		'step-' + menuitemcd + '.png' +
 		'" width="34px" class="mainnavicon"></img></td>';
 	return tdImg;
 };

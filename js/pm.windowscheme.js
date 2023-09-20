@@ -86,7 +86,7 @@ var WINDOWMETADATA = [
     { code : "CT", displayname : "1. Policy Content", longdesc : "In this step, you will define a policy for political analysis.", image : "step-CT.png"},
     { code : "DI", displayname : "Policy Step", longdesc : "", image : "step-DI.png"},
     { code : "DM", displayname : "Impacts Step", longdesc : "", image : "step-DM.png"},
-    { code : "DP", displayname : "Players Step", longdesc : "", image : "step-PL.png"},
+    { code : "DP", displayname : "Players Step", longdesc : "", image : "step-pl.png"},
     { code : "DR", displayname : "Report Step", longdesc : "", image : "step-DR.png"},
     { code : "DS", displayname : "Strategies Step", longdesc : "", image : "step-DS.png"},
     { code : "DX", displayname : "Main Menu", longdesc : "Describes the steps of the methodology and provides access to features."},

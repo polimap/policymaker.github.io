@@ -277,7 +277,8 @@ ProjectManager.showProjectsDialog = function()
 	var keyIndex = -1;
 	for (var key in localStorage)
 	{
-		if (key == ProjectManager.keys.CURRENTPROJECT)
+		if (key == ProjectManager.keys.CURRENTPROJECT ||
+		    !key.startsWith(ProjectManager.keys.SPECIFIC_PROJECT_PREFIX)) //localStorage will also return inherent properties and methods as keys
 		{
 			continue;
 		}
