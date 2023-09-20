@@ -4,7 +4,7 @@
  * All rights reserved.
  */
 
-var VERSION_STRING = "5.0.164";
+var VERSION_STRING = "5.0.173";
 var PageStatic = {};
 
 PageStatic.getPage = function(code, mainUIobjectType)
